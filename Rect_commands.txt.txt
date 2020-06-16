@@ -1,0 +1,121 @@
+https://codepen.io/sgrider/pen/MxPKJE
+
+https://github.com/StephenGrider/redux-code
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+npm install --save faker
+
+https://unsplash.com/developers
+
+npm install --save axios
+
+https://console.developers.google.com/
+
+1. Install a specific version of axios:
+
+npm install axios@0.18.1
+
+2. Move the Params object to the App.js axios call
+
+This is what your axios code should look like at the end of
+
+apis/youtube.js:
+
+import axios from "axios";
+ 
+export default axios.create({
+  baseURL: "https://www.googleapis.com/youtube/v3"
+});
+App.js:
+
+const KEY = "YOUR_KEY";
+ 
+...
+ 
+  onTermSubmit = term => {
+    youtube.get("/search", {
+      params: {
+        q: term,
+        part: "snippet",
+        maxResults: 5,
+        key: KEY
+      }
+    });
+	
+	
+At some point in the course you may end up getting Warning: Each child in a list should have a unique "key" prop even after we add a key prop 
+in the "Fixing a Few Warnings" lecture. To ensure that this is not an issue, we should add a type parameter to our axios config object to
+ only search for videos.
+
+apis/youtube.js:
+
+export default axios.create({
+    baseURL: 'https://www.googleapis.com/youtube/v3',
+    params: {
+      part: 'snippet', 
+      type: 'video',
+      maxResults: 5,
+      key: `${KEY}`
+  }
+})	
+
+npm install --save redux react-redux
+
+
+http://jsonplaceholder.typicode.com/
+
+
+npm install --save redux react-redux axios redux-thunk
+
+
+npm install --save loadash
+
+
+npm install --save react-router-dom
+
+npm install --save redux-form
+#for api project
+npm install --save json-server
+
+npm install --save axios redux-thunk
+
+http://console.developers.google.com/
+
+
+564284587038-k5qcqvhc5rs88m80dpiniou3ilven240.apps.googleusercontent.com
+
+http://redux-form.com/
+
+
+
+Warning: Please use `require("history").createBrowserHistory` instead of `require("history/createBrowserHistory")`. Support for the latter will be removed in the next major release.
+
+To fix, our history.js file should instead look like this:
+
+import { createBrowserHistory } from 'history'; 
+export default createBrowserHistory();
+
+#for rtmp
+npm i node-media-server
+
+In the next lecture we will install the Node Media Server package and create our RTMP server. Our index.js needs a slight modification to the import for v.2.1.0
+
+https://github.com/illuspas/Node-Media-Server#npm-version-recommended
+
+Instead of:
+
+const { NodeMediaServer } = require('node-media-server');
+we need to change the import to this:
+
+const NodeMediaServer = require('node-media-server');
+
+#for client project
+npm i --save flv.js
+
+#obs settings
+scene add scene
+sources display capture
+settings=>stream=> stream type cusom streaming 
+url => rtmp://localhost/live
+strema key give the id of the  streams (1,2 etc)
